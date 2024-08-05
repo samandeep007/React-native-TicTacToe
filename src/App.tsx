@@ -105,8 +105,9 @@ function App(): JSX.Element {
   }
 
   return (
-    <SafeAreaView >
+    <SafeAreaView  >
       <StatusBar />
+      <View style={{height: "100%", padding: 10, paddingBottom: 40, backgroundColor: "black"}}>
       {gameWinner ? (
         <View style={[styles.playerInfo, styles.winnerInfo]}>
           <Text style={styles.winnerTxt}>{gameWinner}</Text>
@@ -144,9 +145,10 @@ function App(): JSX.Element {
       onPress={reloadGame}
       >
         <Text style={styles.gameBtnText}>
-          {gameWinner ? 'Start new game' : 'reLoad the game'}
+          {gameWinner ? 'Start new game' : 'Reload the game'}
         </Text>
       </Pressable>
+      </View>
     </SafeAreaView>
   );
 }
@@ -187,7 +189,7 @@ const styles = StyleSheet.create({
     margin: 12,
   },
   card: {
-    height: 100,
+    height: 120,
     width: '33.33%',
 
     alignItems: 'center',
@@ -195,6 +197,8 @@ const styles = StyleSheet.create({
 
     borderWidth: 1,
     borderColor: '#333',
+    backgroundColor: "white",
+    borderRadius: 4
   },
   winnerInfo: {
     borderRadius: 8,
